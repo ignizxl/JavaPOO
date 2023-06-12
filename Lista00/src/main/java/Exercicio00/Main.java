@@ -19,9 +19,7 @@ public class Main {
         double lado = ler.nextDouble();
         //criando o objeto 'resultado' para testar os métodos 
         Quadrado resultado = new Quadrado(lado);
-      
-        resultado.calcularArea();
-        resultado.calcularPerimetro();
+     
         resultado.imprimir();
     }
 }
