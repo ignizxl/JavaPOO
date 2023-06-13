@@ -11,12 +11,10 @@ package Exercicio00;
 public class Quadrado {
     //atributo
     private double lado;
-    
     //construtor
     public Quadrado(double lado) {
         this.setLado(lado);
     }
-    
     //métodos calcularArea, calcularPerimetro e imprimir.
     public double calcularArea(){
         return (this.getLado() * this.getLado());
@@ -25,6 +23,7 @@ public class Quadrado {
         return (this.getLado() * 4);
     }
     public void imprimir(){
+        System.out.println("-=- Calculando a área e o perímetro de Quadrado; -=- ");
         System.out.println("Valor da área: " + this.calcularArea());
         System.out.println("Valor do perímetro: " + this.calcularPerimetro());
     }

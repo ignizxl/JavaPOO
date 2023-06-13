@@ -40,6 +40,7 @@ public class Retangulo {
         return ((this.getComprimento() * 2) + (this.getLargura() * 2));
     }
     public void imprimir(){
+        System.out.println("-=- Calculando a área e o perímetro de Retângulo; -=- ");
         System.out.println("Valor do 'Comprimento': " + this.getComprimento());
         System.out.println("Valor da 'Largura': " + this.getLargura());
         System.out.println("Valor da Área: " + this.calcularArea());
