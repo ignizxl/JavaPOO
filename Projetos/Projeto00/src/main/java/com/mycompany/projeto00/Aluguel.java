@@ -12,8 +12,8 @@ import java.time.format.DateTimeFormatter;
  *
  * @author João Igor
  */
-public class Aluguel {
-    
+public class Aluguel implements ImprimeStatus{
+    // date format 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
     
     //atributos
@@ -65,8 +65,9 @@ public class Aluguel {
         double totalAPagar = (this.totalDeDiarias() * this.getQuarto().getValorDaDiaria());
         return totalAPagar;
     }
-    // método para exibir informações sobre o aluguel 
-    public void previewAluguel(){
+    // fazendo a sobrescrita do método preview para exibir as informações sobre o aluguel
+    @Override
+    public void preview(){
         System.out.println("=-= Informações sobre o Aluguel =-=");
         System.out.println("- Nome do Hóspede: " + this.getHospede().getNome());
         System.out.println("- Data/Hora de entrada: " + dataDeEntrada.format(formatter));

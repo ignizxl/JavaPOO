@@ -8,7 +8,7 @@ package com.mycompany.projeto00;
  *
  * @author João Igor
  */
-public class Quarto {
+public class Quarto implements ImprimeStatus {
     //atributos 
     private double valorDaDiaria;
     private int numMaxDePessoas;
@@ -48,8 +48,9 @@ public class Quarto {
     public void setHidromassagem(boolean hidromassagem) {
         this.hidromassagem = hidromassagem;
     }
-    //método para exibir todas as informações do Quarto
-    public void previewQuarto(){
+    //fazendo a sobrescrita do método abstrato preview para exibir todas as informações do Quarto
+    @Override
+    public void preview(){
         System.out.println("=-= Informaçõoes do Quarto: =-=");
         System.out.println("- Valor da Diária: R$" + this.getValorDaDiaria());
         System.out.println("- Máximo de Pessoas: " + this.getNumMaxDePessoas());

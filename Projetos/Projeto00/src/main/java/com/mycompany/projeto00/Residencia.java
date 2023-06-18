@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author João Igor
  */
-public class Residencia {
+public class Residencia implements ImprimeStatus{
     //atributos 
     private String rua;
     private int numeroDacasa;
@@ -21,7 +21,7 @@ public class Residencia {
     private ArrayList<Quarto> quartos;
     
     //construtor 
-    public Residencia(String rua, int numeroDacasa, String bairro, String cep, String telefone, String email, ArrayList<Quarto> quartos) {
+    public Residencia(String rua, int numeroDacasa, String bairro, String cep, String telefone, String email) {
         this.setRua(rua);
         this.setNumeroDacasa(numeroDacasa);
         this.setBairro(bairro);
@@ -74,8 +74,9 @@ public class Residencia {
     public void setQuartos(ArrayList<Quarto> quartos) {
         this.quartos = quartos;
     }
-    //método para exibir todas as informações da Residência 
-    public void previewRedencia(){
+    //fazendo a sobrescrita do método abstrato preview para exibir todas as informações da Residência 
+    @Override
+    public void preview(){
         System.out.println("=-= Informações da residência: =-=");
         System.out.println("- Rua: " + this.getRua());
         System.out.println("- Número da Casa: " + this.getNumeroDacasa());
@@ -84,5 +85,9 @@ public class Residencia {
         System.out.println("- Telefone Fixo: " + this.getTelefone());
         System.out.println("- Email de Contato: " + this.getEmail());
         System.out.println("- Quartos: " + this.getQuartos());
+    }
+    
+    public void adicionarQuarto(Quarto quarto){
+        this.quartos.add(quarto);
     }
 }
