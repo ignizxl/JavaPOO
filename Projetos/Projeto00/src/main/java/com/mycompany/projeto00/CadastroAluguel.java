@@ -29,7 +29,7 @@ public class CadastroAluguel {
     
     //método para adicionar alugueis 
     public void adicionarAlugueis(Aluguel aluguel){
-        this.setAlugueis(alugueis);
+        this.alugueis.add(aluguel);
     }
     
     //método para as informações de todos os alugueis

@@ -23,11 +23,11 @@ public class Aluguel implements ImprimeStatus{
     private LocalDateTime dataDeSaida;
     
     //construtor
-    public Aluguel(Quarto quarto, Hospede hospede, LocalDateTime dataDeEntrada, LocalDateTime dataDeSaida) {
+    public Aluguel(Quarto quarto, Hospede hospede, String dataDeEntrada, String dataDeSaida) {
        this.setHospede(hospede);
        this.setQuarto(quarto);
-       this.setDataDeEntrada(LocalDateTime.parse(dataDeEntrada + " 12:00 ;", formatter));
-       this.setDataDeSaida(LocalDateTime.parse(dataDeSaida + " 12:00 ;", formatter));
+       this.setDataDeEntrada(LocalDateTime.parse(dataDeEntrada , formatter));
+       this.setDataDeSaida(LocalDateTime.parse(dataDeSaida , formatter));
     }
     
     //getters e setters
@@ -57,13 +57,11 @@ public class Aluguel implements ImprimeStatus{
     }
     // método para calcular o total de diárias 
     public int totalDeDiarias() {
-        int totalDeDiarias = (int) ChronoUnit.DAYS.between(dataDeEntrada, dataDeSaida);
-        return totalDeDiarias;
+        return (int) ChronoUnit.DAYS.between(dataDeEntrada, dataDeSaida);
     }
     // método para calcular o total a pagar 
     public double totalAPagar(){
-        double totalAPagar = (this.totalDeDiarias() * this.getQuarto().getValorDaDiaria());
-        return totalAPagar;
+        return (this.totalDeDiarias() * this.getQuarto().getValorDaDiaria());
     }
     // fazendo a sobrescrita do método preview para exibir as informações sobre o aluguel
     @Override

@@ -84,7 +84,12 @@ public class Residencia implements ImprimeStatus{
         System.out.println("- CEP: " + this.getCep());
         System.out.println("- Telefone Fixo: " + this.getTelefone());
         System.out.println("- Email de Contato: " + this.getEmail());
-        System.out.println("- Quartos: " + this.getQuartos());
+        System.out.println("- Quartos: ");
+        for (Quarto indice : quartos){
+            System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            indice.preview();
+            System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+        }
     }
     
     public void adicionarQuarto(Quarto quarto){
